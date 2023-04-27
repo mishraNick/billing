@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --primary-color:#EA4C3C;
+  --secondary-color:#F1F1FB;
+  --white:white;
+  --dark-purple:#393A62;
+  --purple:#7978978f;
+  --light-purple:#9292ae49;
+  --black:black;
+}
+
+html {
+  font-size: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+ul li {
+  text-decoration: none;
+}
+
+h1, a, h3, span {
+  color: var(--dark-purple);
+}
+
+body {
+  background-color: var(--light-purple);
+}
+
+.flex-container {
+  display: flex;
+  padding: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-container {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  border-radius: 1rem;
+  background-color: var(--white);
+}
+.box-container::before {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 65rem;
+  top: -4%;
+  left: -5rem;
+  background-color: var(--primary-color);
+  z-index: -1;
+  border-radius: 2rem;
+}
+
+h3 {
+  padding: 0.5rem 0rem;
+}
+
+button {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+button:hover {
+  background-color: var(--black);
+  color: var(--white);
+  border: none;
+}
+
+.left-sidebar {
+  width: 100%;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 1.2rem;
+  background-color: var(--secondary-color);
+}
+.left-sidebar .account-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.left-sidebar .account-div img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 1rem;
+}
+.left-sidebar .fa {
+  margin-right: 0.5rem;
+}
+.left-sidebar ul {
+  list-style-type: none;
+}
+.left-sidebar ul li a {
+  color: var(--dark-purple);
+  padding: 1rem 1rem;
+  display: block;
+  text-decoration: none;
+}
+.left-sidebar ul li a:hover {
+  border-left: 3px solid var(--primary-color);
+  background-color: var(--white);
+  padding: 0.5rem 1rem;
+}
+.left-sidebar li.log-out {
+  position: absolute;
+  bottom: 1%;
+}
+
+.right-area {
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+.right-area .billing-head {
+  margin: 1rem 0rem;
+  font-size: 3rem;
+}
+
+.history-table {
+  margin: 1rem 0rem;
+  font-size: 1.2rem;
+}
+.history-table ul li {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 0.5rem 0rem;
+  margin: 1rem 0rem;
+  font-weight: 600;
+}
+.history-table .load-btn {
+  border: none;
+  border-radius: 0px;
+}
+
+.payment-div {
+  margin: 2rem 0rem;
+}
+
+.visa-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1rem 0rem;
+}
+.visa-area .fa-cc-visa {
+  font-size: 2rem;
+}
+
+.subscription-box {
+  margin: 3rem 0rem;
+  display: flex;
+  justify-content: center;
+}
+.subscription-box .sub-box {
+  width: 50%;
+  background-color: var(--primary-color);
+  padding: 2rem 1rem;
+  color: var(--white);
+  border-radius: 2rem;
+}
+.subscription-box .sub-box h3 {
+  color: var(--white);
+}
+.subscription-box .cancel-btn {
+  background-color: var(--primary-color);
+  border: 1px solid var(--white);
+  padding: 0.5rem;
+  color: var(--white);
+  border-radius: 0.3rem;
+  font-size: 1.2rem;
+  margin: 1rem 0rem;
+}
+
+/*media queries*/
+@media (max-width: 767px) {
+  li.log-out {
+    top: 23%;
+    right: 0%;
+  }
+}
+@media (min-width: 768px) {
+  .flex-container {
+    min-height: 100vh;
+  }
+  .box-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    text-align: start;
+  }
+  h3 {
+    padding: 0px;
+  }
+  .left-sidebar {
+    display: block;
+    padding: 3rem 1rem;
+  }
+  .left-sidebar .account-div {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 1.5rem 0rem;
+  }
+  .left-sidebar .account-div img {
+    width: 5rem;
+    height: 5rem;
+    margin: 0.5rem;
+  }
+  .right-area {
+    padding: 4rem 2rem;
+    grid-template-columns: 2fr 1fr;
+    display: grid;
+  }
+  .right-area .billing-head {
+    margin: 1rem 0rem 3rem 0rem;
+  }
+  .right-area .subscription-box {
+    margin-top: 9rem;
+  }
+  .right-area .subscription-box .sub-box {
+    width: 100%;
+    height: 16rem;
+    padding: 2.5rem 1.5rem;
+  }
+  .payment-div {
+    margin: 4rem 0rem;
+  }
+  .payment-div .visa-area {
+    text-align: center;
+  }
+}
+@media (min-width: 1024px) {
+  .box-container {
+    width: 80%;
+    grid-template-columns: 1.2fr 3.8fr;
+  }
+  .visa-area {
+    grid-template-columns: 2fr 1fr;
+  }
+  .payment-div .left-visa-area {
+    display: flex;
+    align-items: center;
+  }
+  .payment-div .left-visa-area .fa-cc-visa {
+    font-size: 4rem;
+    margin-right: 2rem;
+  }
+  .subscription-box .sub-box {
+    padding: 2.5rem;
+  }
+}
+@media (min-width: 1366px) {
+  html {
+    font-size: 13px;
+  }
+  .subscription-box .sub-box {
+    padding: 3rem !important;
+  }
+}
+.his {
+  background: #000;
+}
+@media (min-width: 1366px) {
+  .his {
+    background: red;
+  }
+}/*# sourceMappingURL=style.css.map */

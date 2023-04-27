@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family: 'Poppins', sans-serif;
+}
+
+//global area
+:root
+{
+  --primary-color:#EA4C3C;  
+  --secondary-color:#F1F1FB;
+  --white:white;
+  --dark-purple:#393A62;
+  --purple:#7978978f;
+  --light-purple:#9292ae49;
+  --black:black;
+}
+
+html
+{
+    font-size: 10px;
+}
+
+ul
+{
+  list-style-type: none;
+  li
+  {
+    text-decoration: none;
+  }
+}
+
+h1,a ,h3,span
+{
+  color: var(--dark-purple);
+}
+
+
+body{
+   background-color: var(--light-purple);
+}
+
+//local area
+.flex-container
+{
+  display: flex;
+  padding: 1.5rem;
+  justify-content: center;
+  align-items: center;  
+}
+
+.box-container
+{
+  position: relative;
+ max-width: 1200px;
+ width: 100%;
+ text-align: center;
+ border-radius: 1rem;
+ background-color: var(--white);
+
+
+ &::before
+ {
+   content: "";
+   position: absolute;
+   width: 25%;
+   height: 65rem;
+   top: -4%;
+   left: -5rem;
+   background-color: var(--primary-color);
+   z-index: -1;
+   border-radius: 2rem;
+ }
+}
+
+h3
+{
+  padding: .5rem 0rem;
+}
+button
+{
+  padding: .5rem;
+  border-radius:.5rem ; 
+
+  &:hover
+  {
+  background-color: var(--black);
+  color: var(--white);
+  border: none;
+  }
+}
+
+//Menubar
+.left-sidebar
+{
+  width: 100%;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 1.2rem;
+  background-color: var(--secondary-color);
+  
+  .account-div
+  { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img
+    {
+      width: 10rem;
+      height: 10rem;
+      border-radius: 1rem;
+    } 
+  }
+  .fa
+  {
+    margin-right:.5rem ;
+  }  
+   ul 
+   {
+    //  height: 100%;?
+     list-style-type: none;
+
+     li 
+    {
+     a
+     {
+      color: var(--dark-purple);
+      padding: 1rem 1rem ;
+      display: block;
+      text-decoration: none;
+    
+      &:hover
+      {
+      border-left:3px solid var(--primary-color);
+      background-color: var(--white);
+      padding: .5rem 1rem;
+       }
+     }
+       }
+    }
+
+   li.log-out
+   {
+    position: absolute;
+    bottom: 1%;
+   } 
+
+}
+
+//main Billing area
+.right-area
+{
+ padding: 1rem;
+ font-size: 1.2rem;
+
+ .billing-head
+ {
+  margin: 1rem 0rem ;
+  font-size: 3rem;
+ }
+
+}
+.history-table
+ {
+  margin: 1rem 0rem;
+  font-size: 1.2rem;
+
+   ul li 
+   {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: .5rem 0rem;
+    margin: 1rem 0rem;
+    font-weight: 600;
+   }
+    
+ .load-btn
+ {
+  border: none;
+  border-radius: 0px;
+ }
+ }
+  
+
+
+//payment area
+.payment-div
+{
+  margin: 2rem 0rem;
+}
+.visa-area
+{
+ display:grid;
+ grid-template-columns: 1fr 1fr;
+ margin: 1rem 0rem;
+
+.fa-cc-visa
+{
+  font-size: 2rem;
+}
+
+}
+
+//Subscription bpx
+.subscription-box
+{
+  margin: 3rem 0rem;
+  display: flex;
+  justify-content: center;
+  
+  .sub-box
+  {
+    width: 50%;
+    background-color: var(--primary-color);
+    padding: 2rem 1rem;
+    color: var(--white) ;
+    border-radius: 2rem;
+
+    h3
+    {
+      color: var(--white) ;
+    }
+  }
+ 
+  .cancel-btn
+  {
+    background-color: var(--primary-color);
+    border: 1px solid var(--white);
+    padding: .5rem;
+    color: var(--white);
+    border-radius: .3rem;
+    font-size: 1.2rem;
+    margin: 1rem 0rem;
+  }
+}
+
+
+/*media queries*/
+
+@media (max-width:767px)
+{
+  li.log-out
+  {
+    top: 23%;
+    right: 0%;
+  }
+}
+
+//mq 768px
+@media (min-width:768px)
+{
+  .flex-container
+  {
+    min-height: 100vh;
+  }
+
+  .box-container
+  {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    text-align: start;
+  }
+
+  h3
+  {
+    padding: 0px;
+  }
+
+  .left-sidebar
+  {
+   display: block;
+   padding: 3rem 1rem;
+  }
+  .left-sidebar .account-div
+  {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 1.5rem 0rem;
+
+    img{
+      width: 5rem ;
+      height: 5rem;
+      margin: .5rem;
+    } 
+  }
+
+  //main billing area
+  .right-area
+  {
+    padding: 4rem 2rem;
+    grid-template-columns: 2fr 1fr;
+    display: grid;
+
+    .billing-head
+    {
+      margin: 1rem 0rem 3rem 0rem;
+    }
+
+    .subscription-box
+    {
+      margin-top: 9rem;
+      
+      .sub-box
+      {
+        width: 100%;
+        height: 16rem;
+        padding: 2.5rem 1.5rem;
+      }
+    }
+  }
+
+  .payment-div
+  {
+    margin: 4rem 0rem;
+
+    .visa-area
+    {
+      text-align: center;
+    }
+  }
+}
+
+
+//mq small laptops
+@media (min-width:1024px)
+{
+
+  .box-container
+  {
+    width: 80%;
+    grid-template-columns: 1.2fr 3.8fr;
+  }
+
+  .visa-area
+  {
+    grid-template-columns: 2fr 1fr;
+  }
+  .payment-div .left-visa-area
+  {
+    display: flex;
+    align-items: center;
+
+    .fa-cc-visa
+    {
+      font-size: 4rem;
+      margin-right: 2rem;
+    }
+  }
+
+  .subscription-box .sub-box
+  {
+    padding: 2.5rem;
+  }
+}
+
+
+//mq small laptops
+@media (min-width:1366px)
+{
+  html
+  {
+    font-size: 13px;
+  }
+
+  .subscription-box .sub-box
+  {
+    padding: 3rem !important;
+  }
+
+}
+
+
+
+
+.his{
+  background: #000;
+
+
+  @media (min-width:1366px){
+    background: red;
+  }
+}
